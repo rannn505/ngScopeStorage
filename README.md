@@ -10,13 +10,13 @@ ngScopeStorage
 
 ## Installation
 
--NPM:
+- NPM:
 ```bash
 $ npm install ngscopestorage
 ```
--CDN:
+- CDN:
 *Coming Soon*
--Download/Clone this repo and include `ngscopestorage.min.js` in your project
+- Download/Clone this repo and include `ngscopestorage.min.js` in your project
 ``` html
 <script src="Path/To/ngscopestorage.min.js"></script>
 ```
@@ -39,31 +39,31 @@ angular.module('app', ['ngScopeStorage'])
 ```
 
 Now you can Use it:
--In your View with {{}}:
+- In your View with {{ }}:
 ``` html
 <span>{{variableToBind}}</span>
 ```
--And read it from BrowserStorage with $vms.prefix:
+- And read it from BrowserStorage with $vms.prefix:
 ```javascript
 localStorage.getItem($vms.prefix.concat("variableToBind")));
 ```
 
 ## Setting up
 
--Install ngScopeStorage
--Include it in your app
+- Install ngScopeStorage
+- Include it in your app
 `angular.module('app', ['ngScopeStorage'])`
--Inject `$vms` provider to your controller
+- Inject `$vms` provider to your controller
 `controller('ctrl', ['$scope','$vms', function($scope,$vms){})`
--Use `$vms.config` to feed the module with some necessary configurations
+- Use `$vms.config` to feed the module with some necessary configurations
 *NOTE:* you must call this function in order the module to work properly.
 `$vms.config` function takes an JSON object with the following properties as an argument:
     - **scope** - The $scope of the controller from which you use the module (Object) *required*
     - **ctrlName** - The name of the controller from which you use the module (String) (Default:"http://localhost") *required*
     - **prefix** - A Unique name that will be saved alongside with your variables in the storage (String) (Default:"vms") *optional*
     - **storageType** - The storage in which your variables will be saved (localStorage/sessionStorage) (String) (Default:"localStorage") *optional*
--Attach any properties that you want to `$vms`
--Enjoy :)
+- Attach any properties that you want to `$vms`
+- Enjoy :)
 
 
 ## License
