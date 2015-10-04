@@ -1,0 +1,53 @@
+{
+  "name": "ngscopestorage",
+  "version": "1.0.0",
+  "description": "An AngularJS module that binds $scope to the browser storage",
+  "main": "ngscopestorage.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "angular": "^1.4.7",
+    "gulp": "^3.9.0",
+    "del": "^2.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rannn505/ngScopeStorage.git"
+  },
+  "keywords": [
+    "ngScopeStorage",
+    "ng",
+    "angular",
+    "localStorage",
+    "local",
+    "storage",
+    "sessionStorage",
+    "session",
+    "storage",
+    "storage",
+    "browser",
+    "storage",
+    "ngStorage",
+    "angular",
+    "storage",
+    "scope",
+    "$scope",
+    "scopeStorage",
+    "scope",
+    "storage"
+  ],
+  "author": "Ran Cohen <rannn505@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rannn505/ngScopeStorage/issues"
+  },
+  "homepage": "https://github.com/rannn505/ngScopeStorage#readme"
+}

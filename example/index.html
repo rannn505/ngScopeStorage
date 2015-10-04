@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="exampleModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"> </script>
+    <script type="text/javascript" src="../dist/ngscopestorage.min.js"></script>
+</head>
+<body style="background: linear-gradient(white, darkgray) no-repeat fixed center; font-family: monospace; overflow: hidden" ng-controller="exampleCtrl">
+
+<div style="position:relative; left: 20px; top: 30px; width: 60%">
+
+    <h1 style="font-size: 30px">Welcome to example page:</h1>
+
+    <h3>Open browserStorage (local/session storage) and look for the variables you've attached to $vms</h3>
+    <ul>
+        <li><span>{{variableToBind}}</span></li>
+        <li><span>{{increase.toString()}}</span></li>
+        <li><button ng-click="increase()">Increase</button> ---> {{counter}}</li>
+    </ul>
+</div>
+
+<div style="position: absolute; top: 20px; right: 30px">
+    <img src="../assets/ngScopeStorage.png">
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
