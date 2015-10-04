@@ -26,7 +26,7 @@ $ npm install ngscopestorage
 ## What's ngScopeStorage?
 
 ngScopeStorage produce a 3 way data-binding by extending $scope's bindings ability.
-In other words this module allow $scope to bind his properties to local/session storage.
+In other words this module allow $scope to bind his properties to local/session storage.  
 View <-- $scope --> BrowserStorage (local/session storage)
 
 ## Quick start
