@@ -5,7 +5,7 @@ ngScopeStorage
 <p> <img height="50" width="50" src="https://raw.githubusercontent.com/rannn505/ngScopeStorage/master/assets/ngScopeStorage.png"> An AngularJS module that binds $scope to the browser storage </p>
 </div>
 
-[![Version npm](https://img.shields.io/npm/v/ngScopeStorage.svg?style=flat-square)](https://www.npmjs.com/package/ngScopeStorage)[![NPM Downloads](https://img.shields.io/npm/dt/ngScopeStorage.svg?style=flat-square)](https://www.npmjs.com/package/ngScopeStorage)[![Dependencies](https://img.shields.io/david/rannn505/ngScopeStorage.svg?style=flat-square)](https://david-dm.org/rannn505/ngScopeStorage)
+[![Version npm](https://img.shields.io/npm/v/ngscopestorage.svg?style=flat-square)](https://www.npmjs.com/package/ngscopestorage)[![NPM Downloads](https://img.shields.io/npm/dt/ngscopestorage.svg?style=flat-square)](https://www.npmjs.com/package/ngscopestorage)[![Dependencies](https://img.shields.io/david/rannn505/ngscopestorage.svg?style=flat-square)](https://david-dm.org/rannn505/ngscopestorage)
 
 
 ## Installation
