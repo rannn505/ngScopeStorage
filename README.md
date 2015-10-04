@@ -15,7 +15,9 @@ ngScopeStorage
 $ npm install ngscopestorage
 ```
 - CDN:
-*Coming Soon*
+``` html
+<script src="https://cdn.jsdelivr.net/angular.ngscopestorage/latest/ngscopestorage.min.js"></script>
+```
 - Download/Clone this repo and include `ngscopestorage.min.js` in your project
 ``` html
 <script src="Path/To/ngscopestorage.min.js"></script>
@@ -70,3 +72,5 @@ localStorage.getItem($vms.prefix.concat("variableToBind")));
 
   [MIT](LICENSE)
 
+
+[![Analytics](https://ga-beacon.appspot.com/UA-67540608-2/rannn505/ngScopeStorage?pixel)](https://github.com/igrigorik/ga-beacon)
