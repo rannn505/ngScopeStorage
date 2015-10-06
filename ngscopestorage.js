@@ -10,7 +10,7 @@
 (function (window, angular) {
     'use strict';
 
-    const MODULE_NAME = 'ngScopeStorage';
+    var MODULE_NAME = 'ngScopeStorage';
 
     var app = angular.module('ngScopeStorage', []);
 
