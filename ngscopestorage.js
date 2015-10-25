@@ -25,6 +25,7 @@
         /*optional*/
         var _prefix = 'vms';
         var _storageType = 'localStorage';
+        var _onReload = 'empty';
 
         /*module_vars*/
         var _storage = window[_storageType];
@@ -64,12 +65,29 @@
             if (typeof st !== 'string') {
                 throw new TypeError( MODULE_NAME + '- set_storageType must get a string.');
             }
-            if (st === '' && st !== 'localstorage' && st !== 'sessionStorage'){
+            if (st === ''){
                 throw new SyntaxError( MODULE_NAME + '- set_storageType must`nt get an empty string');
+            }
+            if(st !== 'localstorage' && st !== 'sessionStorage'){
+                throw new SyntaxError( MODULE_NAME + '- set_storageType got an invalid string');
             }
             _storageType = st;
             _storage = window[_storageType];
         }
+
+        function set_onReload(onr) {
+            if (typeof onr !== 'string') {
+                throw new TypeError( MODULE_NAME + '- set_onReload must get a string.');
+            }
+            if (onr === ''){
+                throw new SyntaxError( MODULE_NAME + '- set_onReload must`nt get an empty string');
+            }
+            if(onr !== 'save' && onr !== 'empty'){
+                throw new SyntaxError( MODULE_NAME + '- set_onReload got an invalid string');
+            }
+            _onReload = onr;
+        }
+
 
         /*cleaners*/
         function clean_storage(_storage){
@@ -92,19 +110,46 @@
 
                 if(angular.isDefined(settingsObj.prefix)){set_prefix(settingsObj.prefix)}
                 if(angular.isDefined(settingsObj.storageType)){set_storageType(settingsObj.storageType)}
+                if(angular.isDefined(settingsObj.onReload)){set_onReload(settingsObj.onReload)}
+
                 init();
             };
 
             function init(){
-                clean_storage(_storage);
+
+                var handler;
+
+                if(_onReload == 'empty') {
+                    clean_storage(_storage);
+                    handler = function(changes) {  empty_binder(changes); };
+                }
+                else{
+                    handler = function(changes) {  save_binder(changes); };
+                }
+
                 _$vms.prefix =_prefix+':'+_ctrlName+'::';
+                Object.observe(_$vms,handler);
             }
 
-            var handler = function(changes) {  bind(changes); };
-            Object.observe(_$vms,handler);
+            function save_binder (keys){
+                //console.log("save");
+                keys.forEach(function (e) {
+                    var name = e.name;
+                    _scope[name] = e.object[name];
 
-            function bind (keys){
-
+                    if(e.type == "add") {
+                        if(!_storage.getItem(_prefix+':'+_ctrlName+'::'+name)){
+                            _storage.setItem(_prefix+':'+_ctrlName+'::'+name , _scope[name]);
+                        }
+                    }
+                    else{
+                        _storage.setItem(_prefix+':'+_ctrlName+'::'+name , _scope[name]);
+                    }
+                });
+                _scope.$apply();
+            }
+            function empty_binder (keys){
+                //console.log("empty");
                 keys.forEach(function (e) {
                     var name = e.name;
                     _scope[name] = e.object[name];

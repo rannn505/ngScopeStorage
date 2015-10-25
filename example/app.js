@@ -5,10 +5,10 @@
 angular.module('exampleModule',['ngScopeStorage'])
     .controller('exampleCtrl', function ($scope,$vms) {
 
-        $vms.config({scope:$scope, ctrlName:'exampleCtrl', prefix:'exampleApp'});
+        $vms.config({scope:$scope, ctrlName:'exampleCtrl', prefix:'exampleApp', onReload:'save'});
 
         $vms.variableToBind = 'Im in $scope and in browser storage';
-        $vms.counter = 0;
+        $vms.counter =  parseInt(localStorage.getItem($vms.prefix.concat("counter"))) || 0;
 
         $vms.increase = function () {
             $vms.counter += 1;
