@@ -64,6 +64,7 @@ localStorage.getItem($vms.prefix.concat("variableToBind")));
     - **ctrlName** - The name of the controller from which you use the module (String) (Default:"http://localhost") *required*
     - **prefix** - A Unique name that will be saved alongside with your variables in the storage (String) (Default:"vms") *optional*
     - **storageType** - The storage in which your variables will be saved (localStorage/sessionStorage) (String) (Default:"localStorage") *optional*
+    - **onReload** - A Setting determines whether the model will clear the data from storage on page reload or keep it (empty/save) (String) (Default:"empty") *optional*
 - Attach any properties that you want to `$vms`
 - Enjoy :)
 
